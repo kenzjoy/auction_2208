@@ -2,6 +2,7 @@ require './lib/item'
 require './lib/auction'
 require './lib/attendee'
 
+# iteration 1
 RSpec.describe Attendee do
   before(:each) do
     @attendee = Attendee.new( {
