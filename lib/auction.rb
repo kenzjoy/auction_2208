@@ -38,14 +38,24 @@ class Auction
   def bidder_info
     info_hash = {}
     items.each do |item|
-      bidder_list.each do |bidder|
-        info_hash[bidder] = { budget: bidder.budget,
-                              items: item if item.bids.include?(bidder) 
-                              end }
-      require 'pry'; binding.pry
+      item.bids.each do |attendee, bid_amount|
+        bidder_list.each do |bidder|
+          info_hash[bidder] = { :budget => bidder.budget, 
+                                :items => nil }
+
+          require 'pry'; binding.pry
+      
       end
     end
   end
+    
+
+        
+      # require 'pry'; binding.pry
+      # item if item.bids.include?(bidder) 
+                              
+      
+
 
   def bidder_list
     items.map do |item|
