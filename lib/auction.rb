@@ -42,6 +42,10 @@ class Auction
   end
 
   def bidder_list
-    
+    items.map do |item|
+      item.bids.map do |attendee, bid_amount|
+        attendee
+      end
+    end.flatten.uniq
   end
 end
