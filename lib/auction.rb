@@ -20,4 +20,10 @@ class Auction
       item.bids.empty?
     end
   end
+
+  def potential_revenue
+    items.map do |item|
+      item.current_high_bid
+    end.compact.sum
+  end
 end
