@@ -29,9 +29,9 @@ class Auction
 
   def bidders
     items.map do |item|
-      item.bids.each do |attendee, bid_amount|
-      require 'pry'; binding.pry
+      item.bids.map do |attendee, bid_amount|
+        attendee.name
       end
-    end
+    end.flatten.uniq
   end
 end
