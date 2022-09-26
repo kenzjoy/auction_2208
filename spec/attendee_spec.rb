@@ -20,3 +20,6 @@ RSpec.describe Attendee do
       expect(@attendee.budget).to eq(50)
     end
 end
+
+# iteration 2
+# iteration 3
