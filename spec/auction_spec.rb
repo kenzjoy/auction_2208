@@ -136,7 +136,7 @@ RSpec.describe Auction do
   end
 
   describe '#bidder_info' do 
-    it 'returns a hash with keys that are attendees, and values that
+    xit 'returns a hash with keys that are attendees, and values that
     are a hash with that attendees budgets and an array of items that
     attendee has bid on' do
       @auction.add_item(@item1)
@@ -167,6 +167,24 @@ RSpec.describe Auction do
       }
 
       expect(@auction.bidder_info).to eq(expected)
+    end
+  end
+
+  describe '#bidder_list' do 
+    it 'creates an array of each bidder object to help bidder info method' do
+      @auction.add_item(@item1)
+      @auction.add_item(@item2)
+      @auction.add_item(@item3)
+      @auction.add_item(@item4)
+      @auction.add_item(@item5)
+      @item1.add_bid(@attendee1, 22)
+      @item1.add_bid(@attendee2, 20)
+      @item4.add_bid(@attendee3, 50)
+      @item3.add_bid(@attendee2, 15)
+      @item1.close_bidding
+      @item1.add_bid(@attendee3, 70)
+
+      expect(@auction.bidder_list).to eq([@attendee1, @attendee2, @attendee3])
     end
   end
 end

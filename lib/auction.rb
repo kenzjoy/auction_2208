@@ -34,4 +34,14 @@ class Auction
       end
     end.flatten.uniq
   end
+
+  def bidder_info
+    bidders.each do |bidder|
+      # require 'pry'; binding.pry
+    end
+  end
+
+  def bidder_list
+    
+  end
 end
