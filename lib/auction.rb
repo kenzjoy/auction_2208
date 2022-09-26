@@ -26,4 +26,12 @@ class Auction
       item.current_high_bid
     end.compact.sum
   end
+
+  def bidders
+    items.map do |item|
+      item.bids.each do |attendee, bid_amount|
+      require 'pry'; binding.pry
+      end
+    end
+  end
 end
