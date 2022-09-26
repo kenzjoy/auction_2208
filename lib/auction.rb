@@ -36,8 +36,10 @@ class Auction
   end
 
   def bidder_info
-    bidders.each do |bidder|
-      # require 'pry'; binding.pry
+    info_hash = {}
+    bidder_list.each do |bidder|
+      info_hash[bidder]
+      require 'pry'; binding.pry
     end
   end
 

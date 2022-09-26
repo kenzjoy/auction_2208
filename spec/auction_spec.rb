@@ -136,7 +136,7 @@ RSpec.describe Auction do
   end
 
   describe '#bidder_info' do 
-    xit 'returns a hash with keys that are attendees, and values that
+    it 'returns a hash with keys that are attendees, and values that
     are a hash with that attendees budgets and an array of items that
     attendee has bid on' do
       @auction.add_item(@item1)
