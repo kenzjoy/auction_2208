@@ -50,6 +50,16 @@ RSpec.describe Item do
       @auction.add_item(@item5)
 
       expect(@item1.bids).to eq({})
+
+      @item1.add_bid(@attendee2, 20)
+      @item1.add_bid(@attendee1, 22)
+
+      # add_bid adds to the bid hash where attendee 
+      # is the key and the bid amount is the value
+      expect(@item1.bids).to eq( {
+                            @attendee2 => 20,
+                            @attendee1 => 22
+                            } )
     end
   end
 end
