@@ -10,7 +10,7 @@ class Item
   end
 
   def add_bid(attendee, bid_amount)
-    bids[attendee] = bid_amount
+    bids[attendee] = bid_amount if bidding_open == true
   end
 
   def current_high_bid
